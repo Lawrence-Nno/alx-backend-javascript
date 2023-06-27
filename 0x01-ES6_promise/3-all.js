@@ -1,6 +1,4 @@
-/* 
- * This function handles multiple successful promises
-*/
+// This function handles multiple successful promises
 import { createUser, uploadPhoto } from './utils';
 
 export default function handleProfileSignup() {
