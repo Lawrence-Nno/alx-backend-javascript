@@ -1,5 +1,5 @@
+/* eslint-disable */
 import Currency from './3-currency';
-
 
 export default class Pricing {
   constructor(amount, currency) {
@@ -12,6 +12,9 @@ export default class Pricing {
   }
 
   set amount(amount) {
+    if (typeof amount !== 'number') {
+      throw TypeError('amount must be a Number');
+    }
     this._amount = amount;
   }
 
@@ -20,6 +23,9 @@ export default class Pricing {
   }
 
   set currency(currency) {
+    if (!(currency instanceof Currency)) {
+      throw TypeError('currency must be a Currency');
+    }
     this._currency = currency;
   }
 
@@ -28,6 +34,6 @@ export default class Pricing {
   }
 
   static convertPrice(amount, conversionRate) {
-    return (amount * conversionRate);
+    return amount * conversionRate;
   }
 }
