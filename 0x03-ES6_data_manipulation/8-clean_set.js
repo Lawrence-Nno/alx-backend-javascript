@@ -1,6 +1,6 @@
 // This func removes startString from a set of strings
 export default function cleanSet(set, startString) {
-  if (startString === '') return '';
+  if (!startString || typeof startString !== 'string' || typeof set !== 'object') return '';
 
   try {
     return [...set]
